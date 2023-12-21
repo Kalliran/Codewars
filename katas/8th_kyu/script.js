@@ -6,14 +6,14 @@ const grow=x=> x.reduce((a,b) => a*b);
 // function grow(x){
 //     return x.reduce((acc, c) => acc*c);
 //   }
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------
 //You will be given an array a and a value x. All you need to do is check whether the provided array contains the value. Array can contain numbers or strings. X can be either.Return true if the array contains the value, false if not.
 
 function check(a, x) {
     // your code here
     return a.includes(x)
 }
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------
 //You get an array of numbers, return the sum of all of the positives ones.
 
 // Example [1,-4,7,12] => 1 + 7 + 12 = 20
@@ -29,7 +29,7 @@ function positiveSum(arr) {
   }
   return total;                         // return total
 }
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------
 // Make a function that will return a greeting statement that uses an input; your program should return, "Hello, <name> how are you doing today?".
 
 // [Make sure you type the exact thing I wrote or the program may not execute properly]
@@ -50,4 +50,12 @@ function sameCase(a, b){
     }else{
     return 0
     }
+}
+//------------------------------------------------------------------
+// Write a function that removes the spaces from the string, then return the resultant string.
+// Examples:
+// Input -> Output
+// "8aaaaa dddd r     " -> "8aaaaaddddr"
+function noSpace(x){
+  return x.replaceAll(' ', '');
 }
