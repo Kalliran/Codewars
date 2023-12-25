@@ -22,7 +22,7 @@ function getCount(str){
 }
 
 getCount("abracadabra");
-
+//-------------------------------------------------------------------------------------------
 // In this kata, you are asked to square every digit of a number and concatenate them.
 
 // For example, if we run 9119 through the function, 811181 will come out, because 9^2 is 81 and 1^2 is 1. (81-1-1-81)
@@ -36,6 +36,7 @@ function squareDigits(num){
       }
     return Number(squareArray.join('')); 
 }
+//--------------------------------------------------------------------------------------------
 //In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
 
 function highAndLow(numbers){
@@ -44,3 +45,13 @@ function highAndLow(numbers){
     return Math.max(...numbers) + " " + Math.min(...numbers); //return highest and lowest
 }
 highAndLow('1', '2', '-3', '4', '5')
+//-------------------------------------------------------------------------------------------
+// You are going to be given a word. Your job is to return the middle character of the word. If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
+
+function getMiddle(s){
+    if(s.length % 2 === 0){ //if string is even
+        return s.slice(s.length / 2 - 1, s.length / 2 + 1) //return two middle chars
+    }else{  // if it's odd
+        return s[Math.floor(s.length / 2)]  //return one middle char
+    }
+}
