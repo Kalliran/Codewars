@@ -67,3 +67,20 @@ function filter_list(l){
 function accum(s){
     return s.split('').map((c,i) => (c.toUpperCase() + c.toLowerCase().repeat(i))).join('-');
 }
+//-------------------------------------------------------------------------------------------
+//An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
+//Example: (Input --> Output)
+// "Dermatoglyphics" --> true "aba" --> false "moOse" --> false (ignore letter case)
+function isIsogram(str){
+    str = str.toLowerCase();  // converting string to lowercase
+    let text = str.split(""); // making it an array
+    if (text.length === 0) {  // if the string is empty return true
+        return true;
+    }
+    for (let i = 0; i < text.length; i++) {
+        if (text.indexOf(text[i]) !== text.lastIndexOf(text[i]) ){  
+            return false;                                           
+        } //compare the first index with the last index of each letter.
+    }
+    return true;
+}
