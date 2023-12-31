@@ -102,3 +102,21 @@ function xO(str){
 function reverseWords(str){
     return str.split("").reverse().join("").split(" ").reverse().join(" ");
 }
+//-------------------------------------------------------------------------------------------
+//Given an integral number, determine if it's a square number:
+//In mathematics, a square number or perfect square is an integer that is the square of an integer; in other words, it is the product of some integer with itself.
+//Basically, we are looking to get a whole number back.
+//Examples:
+// -1  =>  false
+//  0  =>  true
+//  3  =>  false
+//  4  =>  true
+// 25  =>  true
+// 26  =>  false
+const isSquare = (n) => {
+    if(Number.isInteger(Math.sqrt(n))){
+        return true;
+    }else{
+        return false;
+    }
+}
