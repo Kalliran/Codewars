@@ -89,3 +89,12 @@ function basic(operation, val1, val2){
      operation == '/' ? val1 / val2 :
       0;
 }
+//------------------------------------------------------------------
+// Given an array of integers your solution should find the smallest integer.
+// For example:
+// Given [34, 15, 88, 2] your solution will return 2
+// Given [34, -345, -1, 100] your solution will return -345
+// You can assume, for the purpose of this kata, that the supplied array will not be empty.
+findSmallestInt(args) {
+  return args.reduce((acc, c)=> Math.min(acc, c))
+}
