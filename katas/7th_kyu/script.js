@@ -152,7 +152,7 @@ const addBinary = (a, b) => (a+b).toString(2) //decimal to binary with the Numbe
 // Note: keep the original order of the names in the output.
 const friend = (friends) => {
     return friends.filter(str => str.length === 4)
-}
+} 
 //-------------------------------------------------------------------------------------------
 // Build a pyramid-shaped tower, as an array/list of strings, given a positive integer number of floors. A tower block is represented with "*" character.
 // For example, a tower with 3 floors looks like this:
@@ -180,4 +180,13 @@ function towerBuilder(nFloors){
         result.push(space + star + space);
     }
     return result;
+}
+//----------------------------------------------------------------------
+//Thanks to the effects of El Nino this year my holiday snorkelling trip was akin to being in a washing machine... Not fun at all.
+// Given a string made up of '~' and '_' representing waves and calm respectively, your job is to check whether a person would become seasick.
+// Changes from calm to wave or wave to calm will add to the effect (really wave peak to trough but this will do). Find out how many changes in level the string has and if that number is more than 20% of the length of the string, return "Throw Up", else return "No Problem".
+function seaSick(x){
+    let wave = x.split("_~").length-1
+    let calm = x.split("~_").length-1
+    return (wave+calm)/x.length>0.2?"Throw Up":"No Problem"
 }
