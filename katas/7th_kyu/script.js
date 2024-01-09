@@ -190,3 +190,30 @@ function seaSick(x){
     let calm = x.split("~_").length-1
     return (wave+calm)/x.length>0.2?"Throw Up":"No Problem"
 }
+//----------------------------------------------------------------------
+// Given two positive integers m (width) and n (height), fill a two-dimensional list (or array) of size m-by-n in the following way:
+// (1) All the elements in the first and last row and column are 1.
+// (2) All the elements in the second and second-last row and column are 2, excluding the elements from step 1.
+// (3) All the elements in the third and third-last row and column are 3, excluding the elements from the previous steps.
+// And so on ...
+// Examples
+// Given m = 5, n = 8, your function should return
+// [[1, 1, 1, 1, 1],
+//  [1, 2, 2, 2, 1],
+//  [1, 2, 3, 2, 1],
+//  [1, 2, 3, 2, 1],
+//  [1, 2, 3, 2, 1], 
+//  [1, 2, 3, 2, 1],
+//  [1, 2, 2, 2, 1],
+//  [1, 1, 1, 1, 1]]
+function createBox(m, n) {
+    let result = []
+    for(let height = 0; height < n; height++) {
+      result.push([])
+      for(let width = 0; width < m; width++) {
+        let value = Math.min(width + 1, m - width, height + 1, n - height)
+        result[result.length - 1].push(value)
+      }
+    }
+    return result
+  }
