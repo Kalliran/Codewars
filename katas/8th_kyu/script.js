@@ -173,7 +173,7 @@ const reverseSeq = n => {
 String.prototype.toAlternatingCase = function () {
   //creating an array by wrapping in brackets as array literal so we can use the .map() method, then using spread syntax
   //instead of using spread syntax, you could also use this.split("").map().join(''), but we went with spread syntax.map().join('')
-  console.log([...this].map(element => element == element.toUpperCase() ? element.toLowerCase() : element.toUpperCase()).join('')) 
+  [...this].map(element => element == element.toUpperCase() ? element.toLowerCase() : element.toUpperCase()).join('')
   /*let result = ''
   for (let i = 0; i < this.length; i++){
     if(this[i] == this[i].toUpperCase()){
