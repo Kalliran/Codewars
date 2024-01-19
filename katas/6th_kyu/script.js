@@ -20,3 +20,20 @@ function findOdd(A) {
   }
 }
 //---------------------------------------------------------------------------------------
+// Your goal in this kata is to implement a difference function, which subtracts one list from another and returns the result.
+// It should remove all values from list a, which are present in list b keeping their order.
+// Examples
+// arrayDiff([1,2],[1]) == [2]
+// If a value is present in b, all of its occurrences must be removed from the other:
+// arrayDiff([1,2,2,2,3],[2]) == [1,3]
+const arrayDiff = (a, b) => {
+  //compare values with list a and list b
+  //remove all values from list a that are currently in list b, retain order
+  //return result = what's left over after removing b values from a
+  //   a = a.filter((val) => {
+  //     return b.indexOf(val) == -1;
+  //   })
+  //   return a;
+  a = a.filter(val => !b.includes(val))
+  return a;
+}
