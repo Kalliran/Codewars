@@ -263,3 +263,9 @@ function doubleInteger(i) {
   // i will be an integer. Double it and return it.
   return i+i++;
 }
+//------------------------------------------------------------------
+// Implement a function which convert the given boolean value into its string representation.
+// Note: Only valid inputs will be given.
+const booleanToString = (b) => {
+  return b.toString()
+}
