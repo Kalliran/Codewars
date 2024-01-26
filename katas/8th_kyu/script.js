@@ -332,3 +332,10 @@ function twiceAsOld(dadYearsOld, sonYearsOld) {
 
 // same but with arrow function and ternary if statement
 const greet = (name, owner) => {return name == owner ? 'Hello boss' : 'Hello guest';}
+//------------------------------------------------------------------
+// Given an array of integers, return a new array with each value doubled.
+// For example:
+// [1, 2, 3] --> [2, 4, 6]
+function maps(x){
+  return x.map(element => element * 2)
+}
