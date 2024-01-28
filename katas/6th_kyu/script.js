@@ -86,3 +86,29 @@ const countSmileys = (arr) => {
 // The main idea is to count all the occurring characters in a string. If you have a string like aba, then the result should be {'a': 2, 'b': 1}.
 // What if the string is empty? Then the result should be empty object literal, {}.
 const count = (string) => require('lodash').countBy(string);
+//------------------------------------------------------------------
+// Write a function that takes in a string of one or more words, and returns the same string, but with all words that have five or more letters reversed (Just like the name of this Kata). Strings passed in will consist of only letters and spaces. Spaces will be included only when more than one word is present.
+// Examples:
+// "Hey fellow warriors"  --> "Hey wollef sroirraw" 
+// "This is a test        --> "This is a test" 
+// "This is another test" --> "This is rehtona test"
+function spinWords(string){
+  console.log(string)
+
+  let stringArray = string.split(' ');
+  console.log(stringArray)
+
+  const reverseString = (string) => {
+    return string.split("").reverse().join("");
+  }
+
+  //check for five or more letters
+  for(let i = 0; i < stringArray.length; i++){
+    if(stringArray[i].length >= 5){
+      //if so reverse the string
+      const word = stringArray[i]
+      stringArray[i] = reverseString(word)
+    }
+  }
+  return stringArray.join(' ')
+}
