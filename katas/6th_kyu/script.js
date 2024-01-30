@@ -121,3 +121,19 @@ function createPhoneNumber(numbers){
   return numbers.reduce((phoneNum, arr) => phoneNum.replace('x', arr), '(xxx) xxx-xxxx');
 }
 console.log(createPhoneNumber([1,2,3,4,5,6,7,8,9,0]));
+//------------------------------------------------------------------
+// Deoxyribonucleic acid (DNA) is a chemical found in the nucleus of cells and carries the "instructions" for the development and functioning of living organisms.
+// If you want to know more: http://en.wikipedia.org/wiki/DNA
+// In DNA strings, symbols "A" and "T" are complements of each other, as "C" and "G". Your function receives one side of the DNA (string, except for Haskell); you need to return the other complementary side. DNA strand is never empty or there is no DNA at all (again, except for Haskell).
+// More similar exercise are found here: http://rosalind.info/problems/list-view/ (source)
+// Example: (input --> output)
+// "ATTGC" --> "TAACG"
+// "GTAT" --> "CATA"
+function dnaStrand(dna){
+  //build an object that will switch these up for us
+  let object = {A:'T', T:'A', C:'G', G:'C'};
+  //syntax will be .replace(regexp, replacerFunction) mdn reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes
+  //g for global, that way it won't stop at one 'A', it will get all of them.
+  //replacer function, object at e, it will find the key that e represents and replace it
+  return dna.replace(/./g, e => object[e])
+}
