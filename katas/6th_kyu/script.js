@@ -137,3 +137,25 @@ function dnaStrand(dna){
   //replacer function, object at e, it will find the key that e represents and replace it
   return dna.replace(/./g, e => object[e])
 }
+//-----------------------------------------------------------------------
+function duplicateEncode(word){
+  //create an empty object
+  let object = {};
+  let letter = word.toLowerCase().split('');
+  for (let i = 0; i < letter.length; i++){
+    //loop through the letter array
+    let x = letter[i];
+    //if the object is undefined (which it is because it's currently empty above)
+    if( object[x] === undefined){
+      //if undefined, make it exist with a value of 1
+      object[x] = 1;
+    }else{
+      //adds one to the value if it isn't undefined
+      object[x] += 1;
+    }
+  }
+  return letter.map(function(letter){
+    //if ternary stating if object is === 1 return '(' else return ')'
+    return object[letter] === 1 ? '(' : ')'
+  }).join('');
+}
