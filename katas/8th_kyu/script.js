@@ -369,3 +369,11 @@ const countSheeps = arrayOfSheep => arrayOfSheep.filter(Boolean).length //callba
 // 10 --> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 //  1 --> [1]
 const monkeyCount = n => Array.from({length: n},(_,index) => index +1)
+//------------------------------------------------------------------
+function boolToWord( bool ){
+  if(bool == true){
+    return "Yes";
+  }else{
+    return "No";
+  }
+}
