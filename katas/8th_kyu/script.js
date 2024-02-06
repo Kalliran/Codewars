@@ -382,3 +382,7 @@ function boolToWord( bool ){
 // Style Points
 // Sure, this is about as easy as it gets. But how clever can you be to create the most creative "hello world" you can think of? What is a "hello world" solution you would want to show your friends?
 const greet = () => 'hello world!'
+//------------------------------------------------------------------
+// Save the animals by switching them back. You will be given an array which will have three values (tail, body, head). It is your job to re-arrange the array so that the animal is the right way round (head, body, tail).
+// Same goes for all the other arrays/lists that you will get in the tests: you have to change the element positions with the same exact logics
+const fixTheMeerkat = arr => arr.reverse()
