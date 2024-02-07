@@ -247,3 +247,9 @@ function sumTwoSmallestNumbers(numbers) {
     let smallest = numbers.sort((a,b) => a - b).slice(0, 2).reduce();
     return smallest;
 }
+//------------------------------------------------------------------
+function getSum(a,b){
+    let min = Math.min(a,b),
+        max = Math.max(a,b)
+    return (max - min + 1) * (max + min) / 2
+}
