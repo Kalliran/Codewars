@@ -386,3 +386,18 @@ const greet = () => 'hello world!'
 // Save the animals by switching them back. You will be given an array which will have three values (tail, body, head). It is your job to re-arrange the array so that the animal is the right way round (head, body, tail).
 // Same goes for all the other arrays/lists that you will get in the tests: you have to change the element positions with the same exact logics
 const fixTheMeerkat = arr => arr.reverse()
+//------------------------------------------------------------------
+// Create a function that accepts a string and a single character, and returns an integer of the count of occurrences the 2nd argument is found in the first one.
+// If no occurrences can be found, a count of 0 should be returned.
+// ("Hello", "o")  ==>  1
+// ("Hello", "l")  ==>  2
+// ("", "z")       ==>  0
+function strCount(str, letter){  
+  let count = 0;
+  for (let i = 0; i < str.length; i++){
+    if(str.charAt(i) == letter){
+      count += 1;
+    }
+  }
+  return count;
+}
