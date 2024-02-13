@@ -303,3 +303,9 @@ function drawSpider(legSize, bodySize, mouth, eye){
 const lineupStudents = (students) => {
     return students.split(' ').sort((a,b) => b.length - a.length || b.localeCompare(a))
 }
+//------------------------------------------------------------------
+// Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
+// Examples:
+// solution('abc', 'bc') // returns true
+// solution('abc', 'd') // returns false
+const solution = (str, ending) => str.endsWith(ending);
