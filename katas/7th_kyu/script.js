@@ -309,3 +309,4 @@ const lineupStudents = (students) => {
 // solution('abc', 'bc') // returns true
 // solution('abc', 'd') // returns false
 const solution = (str, ending) => str.endsWith(ending);
+//------------------------------------------------------------------
