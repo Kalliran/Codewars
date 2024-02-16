@@ -414,9 +414,7 @@ const makeUpperCase = (str) => str.toUpperCase();
 //------------------------------------------------------------------
 // Create a function which answers the question "Are you playing banjo?".
 // If your name starts with the letter "R" or lower case "r", you are playing banjo!
-
 // The function takes a name as its only argument, and returns one of the following strings:
-
 // name + " plays banjo" 
 // name + " does not play banjo"
 // Names given are always valid strings.
@@ -426,4 +424,10 @@ function areYouPlayingBanjo(name) {
   } else {
     return name + ' does not play banjo';
   }
-};
+}
+//------------------------------------------------------------------
+// Given a string of digits, you should replace any digit below 5 with '0' and any digit 5 and above with '1'. Return the resulting string.
+// Note: input will never be an empty string
+function fakeBin(x){
+ return x.split('').map(x => x < 5 ? 0 : 1).join('');
+}
