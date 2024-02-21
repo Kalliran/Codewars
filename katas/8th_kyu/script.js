@@ -464,3 +464,6 @@ var countSheep = function (num){
 function DNAtoRNA(dna){
   return dna.replaceAll('T', 'U');
 }
+//------------------------------------------------------------------
+//Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+const removeExclamationMarks = (s) => s.replaceAll('!', '');
