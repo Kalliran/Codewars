@@ -467,3 +467,12 @@ function DNAtoRNA(dna){
 //------------------------------------------------------------------
 //Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
 const removeExclamationMarks = (s) => s.replaceAll('!', '');
+//------------------------------------------------------------------
+// Given a string, you have to return a string in which each character (case-sensitive) is repeated once.
+// Examples (Input -> Output):
+// * "String"      -> "SSttrriinngg"
+// * "Hello World" -> "HHeelllloo  WWoorrlldd"
+// * "1234!_ "     -> "11223344!!__  "
+function doubleChar (str){
+  return str.split('').map(x => x + x).join(''); // str.split('') turns into array, x + x (str + str), .join('') turns it back into a string.
+}
