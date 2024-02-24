@@ -387,94 +387,32 @@ const greet = () => 'hello world!'
 // Same goes for all the other arrays/lists that you will get in the tests: you have to change the element positions with the same exact logics
 const fixTheMeerkat = arr => arr.reverse()
 //------------------------------------------------------------------
-// All of the animals are having a feast! Each animal is bringing one dish. There is just one rule: the dish must start and end with the same letters as the animal's name. For example, the great blue heron is bringing garlic naan and the chickadee is bringing chocolate cake.
-// Write a function feast that takes the animal's name and dish as arguments and returns true or false to indicate whether the beast is allowed to bring the dish to the feast.
-// Assume that beast and dish are always lowercase strings, and that each has at least two letters. beast and dish may contain hyphens and spaces, but these will not appear at the beginning or end of the string. They will not contain numerals.
-const feast = (beast, dish) => {
-  if (beast[0] == dish[0] && beast[beast.length-1] == dish[dish.length-1]) {
-    return true
-  } else {
-    return false
+// Create a function that accepts a string and a single character, and returns an integer of the count of occurrences the 2nd argument is found in the first one.
+// If no occurrences can be found, a count of 0 should be returned.
+// ("Hello", "o")  ==>  1
+// ("Hello", "l")  ==>  2
+// ("", "z")       ==>  0
+function strCount(str, letter){  
+  let count = 0;
+  for (let i = 0; i < str.length; i++){
+    if(str.charAt(i) == letter){
+      count += 1;
+    }
   }
+  return count;
 }
 //------------------------------------------------------------------
-// In this kata you need to check the provided array (x) for good ideas 'good' and bad ideas 'bad'. If there are one or two good ideas, return 'Publish!', if there are more than 2 return 'I smell a series!'. If there are no good ideas, as is often the case, return 'Fail!'.
-function well (x) {
-  let goodIdeaCount = 0;
-  for (let idea of x) {
-    if(idea === 'good') goodIdeaCount += 1;
-  }
-  if(goodIdeaCount > 2) return 'I smell a series!';
-  if(goodIdeaCount > 0) return 'Publish!';
-  return 'Fail!';
+// Create a method to see whether the string is ALL CAPS.
+String.prototype.isUpperCase = function() {
+  return this==this.toUpperCase()
 }
 //------------------------------------------------------------------
-// Write a function which converts the input string to uppercase.
-const makeUpperCase = (str) => str.toUpperCase();
-//------------------------------------------------------------------
-// Create a function which answers the question "Are you playing banjo?".
-// If your name starts with the letter "R" or lower case "r", you are playing banjo!
-// The function takes a name as its only argument, and returns one of the following strings:
-// name + " plays banjo" 
-// name + " does not play banjo"
-// Names given are always valid strings.
-function areYouPlayingBanjo(name) {
-  if(name.charAt(0) === 'R' || name.charAt(0) === 'r'){
-    return name + ' plays banjo';
-  } else {
-    return name + ' does not play banjo';
-  }
-}
-//------------------------------------------------------------------
-// Given a string of digits, you should replace any digit below 5 with '0' and any digit 5 and above with '1'. Return the resulting string.
-// Note: input will never be an empty string
-function fakeBin(x){
- return x.split('').map(x => x < 5 ? 0 : 1).join('');
-}
-//------------------------------------------------------------------
-// Write a function to split a string and convert it into an array of words.
-// Examples (Input ==> Output):
-// "Robin Singh" ==> ["Robin", "Singh"]
-// "I love arrays they are my favorite" ==> ["I", "love", "arrays", "they", "are", "my", "favorite"]
-function stringToArray(string){
-  return string.split(' ');
-}
-//------------------------------------------------------------------
-// If you can't sleep, just count sheep!!
-// Task:
-// Given a non-negative integer, 3 for example, return a string with a murmur: "1 sheep...2 sheep...3 sheep...". Input will always be valid, i.e. no negative integers.
-var countSheep = function (num){
-  let sheepString = '';
-  for(let i = 1; i <= num; i++){
-    sheepString += i.toString() + ' sheep...'
-  }
-  return sheepString;
-}
-//------------------------------------------------------------------
-// Deoxyribonucleic acid, DNA is the primary information storage molecule in biological systems. It is composed of four nucleic acid bases Guanine ('G'), Cytosine ('C'), Adenine ('A'), and Thymine ('T').
-
-// Ribonucleic acid, RNA, is the primary messenger molecule in cells. RNA differs slightly from DNA its chemical structure and contains no Thymine. In RNA Thymine is replaced by another nucleic acid Uracil ('U').
-
-// Create a function which translates a given DNA string into RNA.
-
-// For example:
-
-// "GCAT"  =>  "GCAU"
-// The input string can be of arbitrary length - in particular, it may be empty. All input is guaranteed to be valid, i.e. each input string will only ever consist of 'G', 'C', 'A' and/or 'T'.
-function DNAtoRNA(dna){
-  return dna.replaceAll('T', 'U');
-}
-//------------------------------------------------------------------
-//Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
-const removeExclamationMarks = (s) => s.replaceAll('!', '');
-//------------------------------------------------------------------
-// Given a string, you have to return a string in which each character (case-sensitive) is repeated once.
-// Examples (Input -> Output):
-// * "String"      -> "SSttrriinngg"
-// * "Hello World" -> "HHeelllloo  WWoorrlldd"
-// * "1234!_ "     -> "11223344!!__  "
-function doubleChar (str){
-  return str.split('').map(x => x + x).join(''); // str.split('') turns into array, x + x (str + str), .join('') turns it back into a string.
+// Complete the solution so that it reverses all of the words within the string passed in.
+// Words are separated by exactly one space and there are no leading or trailing spaces.
+// Example(Input --> Output):
+// "The greatest victory is that which requires no battle" --> "battle no requires which that is victory greatest The"
+function reverseWords(str){
+  return str.split(' ').reverse().join(' ');
 }
 //------------------------------------------------------------------
 // It's bonus time in the big city! The fatcats are rubbing their paws in anticipation... but who is going to make the most money?
