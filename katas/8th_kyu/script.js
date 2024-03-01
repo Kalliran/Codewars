@@ -517,4 +517,4 @@ function century (year) {
   return firstTwoDigits + 1;
 }
 // Another solution:
-const centuryRefactored = year => Math.ceil(year/100);
+const centuryRefactored = year => Math.ceil(year/100)
