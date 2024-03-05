@@ -563,3 +563,12 @@ const sum = numbers => numbers.reduce((acc, c) => acc + c, 0);
 //------------------------------------------------------------------
 // Now you have to write a function that takes an argument and returns the square of it.
 const square = num => Math.pow(num, 2);
+//------------------------------------------------------------------
+//This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
+function simpleMultiplication(number) {
+  if(number % 2 === 0) {
+    return number * 8;
+  }else{
+    return number * 9;
+  }
+}
