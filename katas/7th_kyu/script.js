@@ -309,3 +309,13 @@ const lineupStudents = (students) => {
 // solution('abc', 'bc') // returns true
 // solution('abc', 'd') // returns false
 const solution = (str, ending) => str.endsWith(ending);
+//------------------------------------------------------------------
+// Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+
+// Examples:
+// Input: 42145 Output: 54421
+
+// Input: 145263 Output: 654321
+
+// Input: 123456789 Output: 987654321
+const descendingOrder = n => Number([...String(n)].sort((a, b) => b - a).join(''));
