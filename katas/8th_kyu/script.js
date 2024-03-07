@@ -582,3 +582,13 @@ function simpleMultiplication(number) {
 function invert (array) {
   return array.map((element) => element * -1);
 }
+//------------------------------------------------------------------
+// Write a function which calculates the average of the numbers in a given list.
+// Note: Empty arrays should return 0.
+function findAverage(array) {
+  if(array != 0){
+    return array.reduce((acc, c) => acc + c) / array.length;
+  }else{
+    return 0
+  }
+}
