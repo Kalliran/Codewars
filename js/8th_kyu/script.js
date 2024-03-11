@@ -660,3 +660,7 @@ function arrayPlusArray(arr1, arr2) {
 const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
   return mpg * fuelLeft >= distanceToPump;
 };
+// another solution, different approach to equation.
+// const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+//   return distanceToPump/mpg <= fuelLeft
+// };
