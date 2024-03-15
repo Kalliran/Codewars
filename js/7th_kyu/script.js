@@ -335,3 +335,25 @@ const descendingOrder = n => Number([...String(n)].sort((a, b) => b - a).join(''
 // 0,2,3 -> false
 // 1,2,9 -> false 
 const isTriangle = (a,b,c) => a + b > c && b + c > a && c + a > b;
+//------------------------------------------------------------------
+// ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.
+
+// If the function is passed a valid PIN string, return true, else return false.
+
+// Examples (Input --> Output)
+// "1234"   -->  true
+// "12345"  -->  false
+// "a234"   -->  false
+function validatePIN (pin) {
+    if(pin.length != 4 && pin.length != 6){
+        return false;
+    }
+    for(let i = 0; i < pin.length; i++){
+        if(pin[i] > '9' || pin[i] < '0'){
+            return false;
+        }
+    }
+    return true;
+}
+// now using regex
+const validatePIN = pin => /^(\d{4}|\d{6})$/.test(pin);
