@@ -907,3 +907,12 @@ function checkForFactor (base, factor) {
 // 3) n = 100, x = 5, y = 3 => false because 100 is not divisible by 3
 // 4) n =  12, x = 7, y = 5 => false because  12 is neither divisible by 7 nor 5
 const isDivisible = (n, x, y) => n % x == 0 && n % y == 0 ? true : false;
+//-------------------------------------------------------------------
+// Jenny has written a function that returns a greeting for a user. However, she's in love with Johnny, and would like to greet him slightly different. She added a special case to her function, but she made a mistake.
+
+// Can you help her?
+function greet(name){
+  if(name === "Johnny")
+    return "Hello, my love!";
+  else return "Hello, " + name + "!";
+}
