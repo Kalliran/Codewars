@@ -491,7 +491,7 @@ const binaryArrayToNumber = arr => /* binary decimal places: 8, 4, 2, 1*/ parseI
 // Please keep in mind that the test cases ensure that the number of people in the bus is always >= 0. So the returned integer can't be negative.
 
 // The second value in the first pair in the array is 0, since the bus is empty in the first bus stop.
-const number = (busStops) => busStops.reduce((people, [getIn, getOut]) => people + getIn - getOut, 0);
+const numbers = (busStops) => busStops.reduce((people, [getIn, getOut]) => people + getIn - getOut, 0);
 // Test Cases:
 describe("Basic tests", () => {
     it("Testing for fixed tests", () => {
@@ -571,4 +571,20 @@ describe('Fixed tests', () => {
 // Added spread syntax because it allows an iterable, such as an array or string, to be expanded in places where zero or more arguments are expected.
 function minMax(arr){
     return [Math.min(...arr), Math.max(...arr)];
+}
+//-------------------------------------------------------------------------------------------
+// Task
+// Your task is to write a function which returns the n-th term of the following series, which is the sum of the first n terms of the sequence (n is the input parameter).
+
+// You need to round the answer to 2 decimal places and return it as String.
+
+// If the given value is 0 then it should return "0.00".
+
+// You will only be given Natural Numbers as arguments.
+function SeriesSum(n) {
+    let result = 0;
+    for (let i = 0; i < n; i++) {
+        result += 1 / (1 + i * 3)
+    }
+    return result.toFixed(2);
 }
