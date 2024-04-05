@@ -949,3 +949,12 @@ function greet(name){
 // All inputs are valid. Array contains at least 1 digit. Each digit appears at most once.
 isValid = formula => !(formula.includes(1) && formula.includes(2)) && !(formula.includes(3) && formula.includes(4)) && (formula.includes(5) == formula.includes(6)) && (formula.includes(7) || formula.includes(8)) 
 //-------------------------------------------------------------------
+// The cockroach is one of the fastest insects. Write a function which takes its speed in km per hour and returns it in cm per second, rounded down to the integer (= floored).
+
+// For example:
+
+// 1.08 --> 30
+// Note! The input is a Real number (actual type is language dependent) and is >= 0. The result should be an Integer.
+function cockroachSpeed(s) {
+  return Math.floor(s * 1000*100 / (60*60));
+}
