@@ -1013,3 +1013,7 @@ function enough(cap, on, wait) {
   if (cap - (on + wait) >= 0) return 0;
   return (on + wait) - cap;
 }
+// another way
+function enough (cap, on, wait) {
+  return Math.max(wait + on - cap, 0);
+}
