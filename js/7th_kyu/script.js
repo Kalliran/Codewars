@@ -675,3 +675,17 @@ const removeSmallest = numbers =>
 function sortByLength (array) {
     return array.sort((a, b) => a.length - b.length);
 }
+//-------------------------------------------------------------------------------------------
+// Write a function that takes a single non-empty string of only lowercase and uppercase ascii letters (word) as its argument, and returns an ordered list containing the indices of all capital (uppercase) letters in the string.
+
+// "CodEWaRs" --> [0,3,4,6]
+var capitals = function (word) {
+    let w2 = word.split("");
+    let z = [];
+    for(let i = 0; i < w2.length; i++){
+        if(w2[i] == w2[i].toUpperCase()){
+            z.push(i);
+        }
+    }
+    return z;
+};
