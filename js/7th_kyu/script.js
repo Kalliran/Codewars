@@ -711,3 +711,15 @@ const smallEnough = (a, limit) => a.every(element => element <= limit);
 // solution([1, 2, 10, 50, 5]); // should return [1,2,5,10,50]
 // solution(null); // should return []
 const solutions = nums => nums ? nums.sort((a, b) => a - b) : [];
+//-------------------------------------------------------------------------------------------
+// You are given an odd-length array of integers, in which all of them are the same, except for one single number.
+
+// Complete the method which accepts such an array, and returns that single different number.
+
+// The input array will always be valid! (odd-length >= 3)
+
+// Examples
+// [1, 1, 2] ==> 2
+// [17, 17, 3, 17, 17, 17, 17] ==> 3
+const stray = (numbers, sort = numbers.sort()) => 
+    sort[0] == sort[1] ? sort[sort.length - 1] : sort[0]; // read as "IF sort at 0 index is equal to sort at 1 index, RETURN sort[sort.length -1] ELSE return sort 0 index."
