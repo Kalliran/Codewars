@@ -1195,3 +1195,7 @@ function powersOfTwo(n){
 function findDifference(a, b) {
   return Math.abs((a[0] * a[1] * a[2]) - (b[0] * b[1] * b[2]));
 }
+//-------------------------------------------------------------------
+function getRealFloor(n) {
+  return n > 13 ? n - 2 : n > 0 ? n - 1 : n;
+}
