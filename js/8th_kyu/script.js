@@ -1200,6 +1200,7 @@ function getRealFloor(n) {
   return n > 13 ? n - 2 : n > 0 ? n - 1 : n;
 }
 //-------------------------------------------------------------------
+<<<<<<< HEAD
 // Title: Sum The Strings
 // Create a function that takes 2 integers in form of a string as an input, and outputs the sum (also as a string):
 
@@ -1219,4 +1220,13 @@ function sumStr(a,b) {
   if (a === '') a = '0';
   if (b === '') b = '0';
   return `${parseInt(a) + parseInt(b)}`;
+=======
+// Title: Find numbers which are divisible by given number
+// Complete the function which takes two arguments and returns all numbers which are divisible by the given divisor. First argument is an array of numbers and the second is the divisor.
+// Example(Input1, Input2 --> Output)
+
+// [1, 2, 3, 4, 5, 6], 2 --> [2, 4, 6]
+function divisibleBy(numbers, divisor){
+  return numbers.filter(x => x % divisor == 0);
+>>>>>>> 03520a696894ad6a3b7c67374baf7b6df8943caa
 }
