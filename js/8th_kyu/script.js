@@ -1403,3 +1403,16 @@ function differenceInAges(ages){
 function symmetricPoint(p, q) {
   return [2 * q[0] - p[0], 2 * q[1] - p[1]];
 }
+//-------------------------------------------------------------------
+// Title: Exclamation marks series #11: Replace all vowel to exclamation mark in the sentence
+// Description:
+// Replace all vowel to exclamation mark in the sentence. aeiouAEIOU is vowel.
+
+// Examples
+// replace("Hi!") === "H!!"
+// replace("!Hi! Hi!") === "!H!! H!!"
+// replace("aeiou") === "!!!!!"
+// replace("ABCDE") === "!BCD!"
+function replace(s){
+  return s.replace(/[aeiou]/gi, '!')
+}
