@@ -163,3 +163,17 @@ function duplicateEncode(word){
 // "The city provides its citizens with a Walk Generating App on their phones. Every time you press the button, it sends you an array of one-letter strings representing directions to walk (e.g., ['n', 's', 'w', 'e']). You always walk only a single block for each letter (direction), and you know it takes you one minute to traverse one city block. So, create a function that will return true if the walk the app gives you will take exactly ten minutes (you don't want to be early or late!) and will, of course, return you to your starting point. Return false otherwise."
 const isValidWalk = walk => walk.length == 10 && !walk.reduce((prev,curr) => prev + {'n':1, 'e':2, 's':-1, 'w':-2}[curr],0)
 //------------------------------------------------------------------
+// Title: Your order, please
+// Your task is to sort a given string. Each word in the string will contain a single number. This number is the position the word should have in the result.
+
+// Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
+
+// If the input string is empty, return an empty string. The words in the input String will only contain valid consecutive numbers.
+
+// Examples
+// "is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
+// "4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
+// ""  -->  ""
+function order(words){
+  return words.split(' ').sort((a, b) => {return a.match(/\d/)[0] - b.match(/\d/)[0]}).join(' ')
+}
