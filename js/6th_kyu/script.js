@@ -177,3 +177,4 @@ const isValidWalk = walk => walk.length == 10 && !walk.reduce((prev,curr) => pre
 function order(words){
   return words.split(' ').sort((a, b) => {return a.match(/\d/)[0] - b.match(/\d/)[0]}).join(' ')
 }
+//------------------------------------------------------------------
