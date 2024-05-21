@@ -1,7 +1,7 @@
 // Given a non-empty array of integers, return the result of multiplying the values together in order. Example:
 // [1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24
 
-const grow = x => x.reduce((a,b) => a*b);
+const grow = (x) => x.reduce((a, b) => a * b);
 
 // function grow(x){
 //     return x.reduce((acc, c) => acc*c);
@@ -10,8 +10,8 @@ const grow = x => x.reduce((a,b) => a*b);
 //You will be given an array 'a'and a value 'x'. All you need to do is check whether the provided array contains the value. Array can contain numbers or strings. X can be either.Return true if the array contains the value, false if not.
 
 function check(a, x) {
-    // your code here
-    return a.includes(x)
+  // your code here
+  return a.includes(x);
 }
 
 const check = (a, x) => a.includes(x);
@@ -23,20 +23,22 @@ const check = (a, x) => a.includes(x);
 // Note: if there is nothing to sum, the sum is default to 0.
 
 function positiveSum(arr) {
-  let total = 0;    
-  for (i = 0; i < arr.length; i++) {    // setup loop to go through array of given length
-    if (arr[i] > 0) {                   // if arr[i] is greater than zero, ensures removal of negative elements
-      total += arr[i];                  // add arr[i] to total
+  let total = 0;
+  for (i = 0; i < arr.length; i++) {
+    // setup loop to go through array of given length
+    if (arr[i] > 0) {
+      // if arr[i] is greater than zero, ensures removal of negative elements
+      total += arr[i]; // add arr[i] to total
     }
   }
-  return total;                         // return total
+  return total; // return total
 }
 //--------------------------------------------------------------------
 // Make a function that will return a greeting statement that uses an input; your program should return, "Hello, <name> how are you doing today?".
 
 // [Make sure you type the exact thing I wrote or the program may not execute properly]
 
-function greet(name){
+function greet(name) {
   return `Hello, ${name} how are you doing today?`;
 }
 //-----------------------------------------------------------------
@@ -44,22 +46,28 @@ function greet(name){
 // If either of the characters is not a letter, return -1
 // If both characters are the same case, return 1
 // if both characters are letters, but not the same case, return 0
-function sameCase(a, b){
-  if(a.toUpperCase() === a.toLowerCase() || b.toLowerCase() === b.toUpperCase()){
-    return -1
-    }else if(a === a.toLowerCase() && b === b.toLowerCase() || a === a.toUpperCase() && b === b.toUpperCase()){
-        return 1
-    }else{
-    return 0
-    }
+function sameCase(a, b) {
+  if (
+    a.toUpperCase() === a.toLowerCase() ||
+    b.toLowerCase() === b.toUpperCase()
+  ) {
+    return -1;
+  } else if (
+    (a === a.toLowerCase() && b === b.toLowerCase()) ||
+    (a === a.toUpperCase() && b === b.toUpperCase())
+  ) {
+    return 1;
+  } else {
+    return 0;
+  }
 }
 //------------------------------------------------------------------
 // Write a function that removes the spaces from the string, then return the resultant string.
 // Examples:
 // Input -> Output
 // "8aaaaa dddd r     " -> "8aaaaaddddr"
-function noSpace(x){
-  return x.replaceAll(' ', '');
+function noSpace(x) {
+  return x.replaceAll(" ", "");
 }
 //------------------------------------------------------------------
 // Your task is to create a function that does four basic mathematical operations.
@@ -70,26 +78,30 @@ function noSpace(x){
 // ('-', 15, 18) --> -3
 // ('*', 5, 5) --> 25
 // ('/', 49, 7) --> 7
-function basicOp(operation, value1, value2){
-  if (operation == '+'){
+function basicOp(operation, value1, value2) {
+  if (operation == "+") {
     return value1 + value2;
-  }else if(operation == '-'){
+  } else if (operation == "-") {
     return value1 - value2;
-  }else if(operation == '*'){
+  } else if (operation == "*") {
     return value1 * value2;
-  }else if(operation == '/'){
+  } else if (operation == "/") {
     return value1 / value2;
-  }else{
+  } else {
     return 0;
   }
 }
 // -same thing, just ternary
-function basic(operation, val1, val2){
-  return operation == '+' ? val1 + val2 :
-   operation == '-' ? val1 - val2 :
-    operation == '*' ? val1 * val2 :
-     operation == '/' ? val1 / val2 :
-      0;
+function basic(operation, val1, val2) {
+  return operation == "+"
+    ? val1 + val2
+    : operation == "-"
+    ? val1 - val2
+    : operation == "*"
+    ? val1 * val2
+    : operation == "/"
+    ? val1 / val2
+    : 0;
 }
 //------------------------------------------------------------------
 // Given an array of integers your solution should find the smallest integer.
@@ -99,7 +111,7 @@ function basic(operation, val1, val2){
 // You can assume, for the purpose of this kata, that the supplied array will not be empty.
 class SmallestIntegerFinder {
   findSmallestInt(args) {
-    return Math.min(...args)
+    return Math.min(...args);
   }
 }
 //------------------------------------------------------------------
@@ -107,8 +119,10 @@ class SmallestIntegerFinder {
 // You receive an array with your peers' test scores. Now calculate the average and compare your score!
 // Return True if you're better, else False!
 // Your points are not included in the array of your class's points. For calculating the average point you may add your point to the given array!
-function betterThanAverage(classPoints, yourPoints){
-  return yourPoints > classPoints.reduce((acc, c) => acc + c, 0) / classPoints.length
+function betterThanAverage(classPoints, yourPoints) {
+  return (
+    yourPoints > classPoints.reduce((acc, c) => acc + c, 0) / classPoints.length
+  );
 }
 //------------------------------------------------------------------
 // Can you find the needle in the haystack?
@@ -116,10 +130,10 @@ function betterThanAverage(classPoints, yourPoints){
 // After your function finds the needle it should return a message (as a string) that says:
 // "found the needle at position " plus the index it found the needle, so:
 // Example(Input --> Output)
-// ["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"] --> "found the needle at position 5" 
-function findNeedle(haystack){
-  if(haystack.includes('needle')){
-   return `found the needle at position ${haystack.indexOf('needle')}`
+// ["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"] --> "found the needle at position 5"
+function findNeedle(haystack) {
+  if (haystack.includes("needle")) {
+    return `found the needle at position ${haystack.indexOf("needle")}`;
   }
 }
 //------------------------------------------------------------------
@@ -136,13 +150,15 @@ function findNeedle(haystack){
 // 0 <= y <= 4
 function points(games) {
   let sum = 0;
-  for(let i = 0; i < games.length; i++) {
-    let a = games[i].split(':');
-    if(a[0] > a[1]) {
+  for (let i = 0; i < games.length; i++) {
+    let a = games[i].split(":");
+    if (a[0] > a[1]) {
       sum += 3;
-    } else if(a[0] == a[1]) {
+    } else if (a[0] == a[1]) {
       sum += 1;
-    } else { sum = sum } 
+    } else {
+      sum = sum;
+    }
   }
   return sum;
 }
@@ -151,17 +167,18 @@ function points(games) {
 // For example (Input -> Output):
 // 2 -> 3 (1 + 2)
 // 8 -> 36 (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8)
-const summation = num => num * (1 + num) / 2
+const summation = (num) => (num * (1 + num)) / 2;
 //------------------------------------------------------------------
 // Build a function that returns an array of integers from n to 1 where n>0.
 // Example : n=5 --> [5,4,3,2,1]
-const reverseSeq = n => {
+const reverseSeq = (n) => {
   let answer = []; //initialize an array
-  for(let i=n; i>0; i--){//loop down from n to 1
-    answer.push(i);//push each i to the answer array
+  for (let i = n; i > 0; i--) {
+    //loop down from n to 1
+    answer.push(i); //push each i to the answer array
   }
-  return answer;//output
-}
+  return answer; //output
+};
 //------------------------------------------------------------------
 // Define String.prototype.toAlternatingCase (or a similar function/method such as to_alternating_case/toAlternatingCase/ToAlternatingCase in your selected language; see the initial solution for details) such that each lowercase letter becomes uppercase and each uppercase letter becomes lowercase. For example:
 // "hello world".toAlternatingCase() === "HELLO WORLD"
@@ -175,7 +192,13 @@ const reverseSeq = n => {
 String.prototype.toAlternatingCase = function () {
   //creating an array by wrapping in brackets as array literal so we can use the .map() method, then using spread syntax
   //instead of using spread syntax, you could also use this.split("").map().join(''), but we went with spread syntax.map().join('')
-  return [...this].map(element => element == element.toUpperCase() ? element.toLowerCase() : element.toUpperCase()).join('')
+  return [...this]
+    .map((element) =>
+      element == element.toUpperCase()
+        ? element.toLowerCase()
+        : element.toUpperCase()
+    )
+    .join("");
   /*let result = ''
   for (let i = 0; i < this.length; i++){
     if(this[i] == this[i].toUpperCase()){
@@ -185,20 +208,20 @@ String.prototype.toAlternatingCase = function () {
     }
   }
   return result*/
-}
+};
 //------------------------------------------------------------------
 // Write a function that takes an array of words and smashes them together into a sentence and returns the sentence. You can ignore any need to sanitize words or add punctuation, but you should add spaces between each word. Be careful, there shouldn't be a space at the beginning or the end of the sentence!
 // Example
 // ['hello', 'world', 'this', 'is', 'great']  =>  'hello world this is great'
-const smash = words => words.join(' ')
+const smash = (words) => words.join(" ");
 //------------------------------------------------------------------
 // Your classmates asked you to copy some paperwork for them. You know that there are 'n' classmates and the paperwork has 'm' pages.
 // Your task is to calculate how many blank pages do you need. If n < 0 or m < 0 return 0.
 // n= 5, m=5: 25
 // n=-5, m=5:  0
 function paperwork(n, m) {
-  if(n < 0 || m < 0){
-    return 0
+  if (n < 0 || m < 0) {
+    return 0;
   }
   return n * m;
 }
@@ -206,8 +229,8 @@ function paperwork(n, m) {
 // Take an array and remove every second element from the array. Always keep the first element and start removing with the next element.
 // ["Keep", "Remove", "Keep", "Remove", "Keep", ...] --> ["Keep", "Keep", "Keep", ...]
 // None of the arrays will be empty, so you don't have to worry about that!
-function removeEveryOther(arr){
-  return arr.filter((_, index) => index % 2 === 0) //if the element's index is even, it is filtered out
+function removeEveryOther(arr) {
+  return arr.filter((_, index) => index % 2 === 0); //if the element's index is even, it is filtered out
 }
 //------------------------------------------------------------------
 // Think of a way to store the languages as a database. The languages are listed below so you can copy and paste!
@@ -231,46 +254,45 @@ function removeEveryOther(arr){
 // , ("swedish", "Valkommen")
 // , ("welsh", "Croeso")
 // ]
-function greet (language){
-	var database = 
-  {
-    "english": "Welcome",
-    "czech": "Vitejte",
-    "danish": "Velkomst",
-    "dutch": "Welkom",
-    "estonian": "Tere tulemast",
-    "finnish": "Tervetuloa",
-    "flemish": "Welgekomen",
-    "french": "Bienvenue",
-    "german": "Willkommen",
-    "irish": "Failte",
-    "italian": "Benvenuto",
-    "latvian": "Gaidits",
-    "lithuanian": "Laukiamas",
-    "polish": "Witamy",
-    "spanish": "Bienvenido",
-    "swedish": "Valkommen",
-    "welsh": "Croeso"
+function greet(language) {
+  var database = {
+    english: "Welcome",
+    czech: "Vitejte",
+    danish: "Velkomst",
+    dutch: "Welkom",
+    estonian: "Tere tulemast",
+    finnish: "Tervetuloa",
+    flemish: "Welgekomen",
+    french: "Bienvenue",
+    german: "Willkommen",
+    irish: "Failte",
+    italian: "Benvenuto",
+    latvian: "Gaidits",
+    lithuanian: "Laukiamas",
+    polish: "Witamy",
+    spanish: "Bienvenido",
+    swedish: "Valkommen",
+    welsh: "Croeso",
   };
-  for (var key in database){
-    if(key == language){
+  for (var key in database) {
+    if (key == language) {
       return database[key];
     }
   }
-  return database['english'];
+  return database["english"];
 }
 //------------------------------------------------------------------
 //Code as fast as you can! You need to double the integer and return it.
 function doubleInteger(i) {
   // i will be an integer. Double it and return it.
-  return i+i++;
+  return i + i++;
 }
 //------------------------------------------------------------------
 // Implement a function which convert the given boolean value into its string representation.
 // Note: Only valid inputs will be given.
 const booleanToString = (b) => {
-  return b.toString()
-}
+  return b.toString();
+};
 //------------------------------------------------------------------
 // Complete the function so that it finds the average of the three scores passed to it and returns the letter value associated with that grade.
 // Numerical Score	Letter Grade
@@ -280,18 +302,18 @@ const booleanToString = (b) => {
 // 60 <= score < 70	'D'
 // 0 <= score < 60	'F'
 // Tested values are all between 0 and 100. Theres is no need to check for negative values or values greater than 100.
-function getGrade (s1, s2, s3) {
-  let average = Math.floor((s1 + s2 + s3) / 3)
-  if(average < 60){
-    return 'F'
-  }else if(average < 70){
-    return 'D'
-  }else if(average < 80){
-    return 'C'
-  }else if(average < 90){
-    return 'B'
-  }else{
-    return 'A'
+function getGrade(s1, s2, s3) {
+  let average = Math.floor((s1 + s2 + s3) / 3);
+  if (average < 60) {
+    return "F";
+  } else if (average < 70) {
+    return "D";
+  } else if (average < 80) {
+    return "C";
+  } else if (average < 90) {
+    return "B";
+  } else {
+    return "A";
   }
 }
 //------------------------------------------------------------------
@@ -306,7 +328,7 @@ function litres(time) {
   //0.5 litres per hour
   //time in hours, round down
   let liters = 0.5;
-  let lph = Math.floor(liters * time)
+  let lph = Math.floor(liters * time);
   return lph;
 }
 //------------------------------------------------------------------
@@ -315,7 +337,7 @@ function litres(time) {
 // current age of his son (years)
 // Сalculate how many years ago the father was twice as old as his son (or in how many years he will be twice as old). The answer is always greater or equal to 0, no matter if it was in the past or it is in the future.
 function twiceAsOld(dadYearsOld, sonYearsOld) {
-  return Math.abs(dadYearsOld - 2 * sonYearsOld)
+  return Math.abs(dadYearsOld - 2 * sonYearsOld);
 }
 //------------------------------------------------------------------
 // Create a function that gives a personalized greeting. This function takes two parameters: name and owner.
@@ -333,25 +355,27 @@ function twiceAsOld(dadYearsOld, sonYearsOld) {
 // }
 
 // same but with arrow function and ternary if statement
-const greet = (name, owner) => {return name == owner ? 'Hello boss' : 'Hello guest';}
+const greet = (name, owner) => {
+  return name == owner ? "Hello boss" : "Hello guest";
+};
 //------------------------------------------------------------------
 // Given an array of integers, return a new array with each value doubled.
 // For example:
 // [1, 2, 3] --> [2, 4, 6]
-function maps(x){
-  return x.map(element => element * 2)
+function maps(x) {
+  return x.map((element) => element * 2);
 }
 //------------------------------------------------------------------
 // Write a program where Alex can input (n) how many times the hoop goes round and it will return him an encouraging message :)
 // If Alex gets 10 or more hoops, return the string "Great, now move on to tricks".
 // If he doesn't get 10 hoops, return the string "Keep at it until you get it".
 const hoopCount = (n) => {
-  if(n >= 10){
-    return 'Great, now move on to tricks'
-  }else{
-    return 'Keep at it until you get it'
+  if (n >= 10) {
+    return "Great, now move on to tricks";
+  } else {
+    return "Keep at it until you get it";
   }
-}
+};
 //--------------------------------------------------------------------
 // Consider an array/list of sheep where some sheep may be missing from their place. We need a function that counts the number of sheep present in the array (true means present).
 // For example,
@@ -363,19 +387,19 @@ const hoopCount = (n) => {
 //   false, false, true,  true]
 // The correct answer would be 17.
 // Hint: Don't forget to check for bad values like null/undefined
-const countSheeps = arrayOfSheep => arrayOfSheep.filter(Boolean).length //callback function syntax with boolean constructor
+const countSheeps = (arrayOfSheep) => arrayOfSheep.filter(Boolean).length; //callback function syntax with boolean constructor
 //--------------------------------------------------------------------
 // You take your son to the forest to see the monkeys. You know that there are a certain number there (n), but your son is too young to just appreciate the full number, he has to start counting them from 1.
 // As a good parent, you will sit and count with him. Given the number (n), populate an array with all numbers up to and including that number, but excluding zero.
 // For example(Input --> Output):
 // 10 --> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 //  1 --> [1]
-const monkeyCount = n => Array.from({length: n},(_,index) => index +1)
+const monkeyCount = (n) => Array.from({ length: n }, (_, index) => index + 1);
 //------------------------------------------------------------------
-function boolToWord( bool ){
-  if(bool == true){
+function boolToWord(bool) {
+  if (bool == true) {
     return "Yes";
-  }else{
+  } else {
     return "No";
   }
 }
@@ -383,21 +407,21 @@ function boolToWord( bool ){
 // Make a simple function called greet that returns the most-famous "hello world!".
 // Style Points
 // Sure, this is about as easy as it gets. But how clever can you be to create the most creative "hello world" you can think of? What is a "hello world" solution you would want to show your friends?
-const greet = () => 'hello world!'
+const greet = () => "hello world!";
 //------------------------------------------------------------------
 // Save the animals by switching them back. You will be given an array which will have three values (tail, body, head). It is your job to re-arrange the array so that the animal is the right way round (head, body, tail).
 // Same goes for all the other arrays/lists that you will get in the tests: you have to change the element positions with the same exact logics
-const fixTheMeerkat = arr => arr.reverse()
+const fixTheMeerkat = (arr) => arr.reverse();
 //------------------------------------------------------------------
 // Create a function that accepts a string and a single character, and returns an integer of the count of occurrences the 2nd argument is found in the first one.
 // If no occurrences can be found, a count of 0 should be returned.
 // ("Hello", "o")  ==>  1
 // ("Hello", "l")  ==>  2
 // ("", "z")       ==>  0
-function strCount(str, letter){  
+function strCount(str, letter) {
   let count = 0;
-  for (let i = 0; i < str.length; i++){
-    if(str.charAt(i) == letter){
+  for (let i = 0; i < str.length; i++) {
+    if (str.charAt(i) == letter) {
       count += 1;
     }
   }
@@ -405,16 +429,16 @@ function strCount(str, letter){
 }
 //------------------------------------------------------------------
 // Create a method to see whether the string is ALL CAPS.
-String.prototype.isUpperCase = function() {
-  return this==this.toUpperCase()
-}
+String.prototype.isUpperCase = function () {
+  return this == this.toUpperCase();
+};
 //------------------------------------------------------------------
 // Complete the solution so that it reverses all of the words within the string passed in.
 // Words are separated by exactly one space and there are no leading or trailing spaces.
 // Example(Input --> Output):
 // "The greatest victory is that which requires no battle" --> "battle no requires which that is victory greatest The"
-function reverseWords(str){
-  return str.split(' ').reverse().join(' ');
+function reverseWords(str) {
+  return str.split(" ").reverse().join(" ");
 }
 //------------------------------------------------------------------
 // It's bonus time in the big city! The fatcats are rubbing their paws in anticipation... but who is going to make the most money?
@@ -425,9 +449,9 @@ function reverseWords(str){
 
 // Return the total figure the individual will receive as a string prefixed with "£" (= "\u00A3", JS, Go, Java, Scala, and Julia), "$" (C#, C++, Ruby, Clojure, Elixir, PHP, Python, Haskell, and Lua) or "¥" (Rust).
 function bonusTime(salary, bonus) {
-  if(bonus === true) {
+  if (bonus === true) {
     return "£" + salary * 10;
-  }else{
+  } else {
     return "£" + salary;
   }
 }
@@ -444,16 +468,16 @@ function bonusTime(salary, bonus) {
 // The test cases contain numbers only by mistake.
 function correct(string) {
   let correctedText = "";
-  for(let i = 0; i < string.length; i++){
-    switch(string[i]){
-      case '5':
-        correctedText += 'S';
+  for (let i = 0; i < string.length; i++) {
+    switch (string[i]) {
+      case "5":
+        correctedText += "S";
         break;
-      case '0':
-        correctedText += 'O';
+      case "0":
+        correctedText += "O";
         break;
-      case '1':
-        correctedText += 'I';
+      case "1":
+        correctedText += "I";
         break;
       default:
         correctedText += string[i];
@@ -472,8 +496,8 @@ function correct(string) {
 // "HELLO"     -->  "HELLO"
 // don't worry about uppercase vowels
 // y is not considered a vowel for this kata
-function shortcut(string){
-  return string.replace(/[aeiou]/gi, '');
+function shortcut(string) {
+  return string.replace(/[aeiou]/gi, "");
 }
 //------------------------------------------------------------------
 // You will be given a list of strings. You must sort it alphabetically (case-sensitive, and based on the ASCII values of the chars) and then return the first value.
@@ -481,7 +505,7 @@ function shortcut(string){
 // The returned value must be a string, and have "***" between each of its letters.
 
 // You should not remove or add elements from/to the array.
-const twoSort = (s) => s.sort()[0].split('').join('***');
+const twoSort = (s) => s.sort()[0].split("").join("***");
 //------------------------------------------------------------------
 // Given 2 strings, a and b, return a string of the form short+long+short, with the shorter string on the outside and the longer string on the inside. The strings will not be the same length, but they may be empty ( zero length ).
 
@@ -493,12 +517,12 @@ const twoSort = (s) => s.sort()[0].split('').join('***');
 // ("1", "22") --> "1221"
 // ("22", "1") --> "1221"
 const solution = (a, b) => {
-  if(a.length > b.length){
+  if (a.length > b.length) {
     return b + a + b;
-  }else{
+  } else {
     return a + b + a;
   }
-}
+};
 //------------------------------------------------------------------
 // The first century spans from the year 1 up to and including the year 100, the second century - from the year 101 up to and including the year 200, etc.
 
@@ -511,20 +535,20 @@ const solution = (a, b) => {
 // 1601 --> 17
 // 2000 --> 20
 // 2742 --> 28
-function century (year) {
+function century(year) {
   // We need 'year' to be a number otherwise it remains a string. Putting a '+' plus sign in front of the variable 'year' keeps it as an integer.
-  if(year.toString().length < 3) return 1;
+  if (year.toString().length < 3) return 1;
   const firstTwoDigits = +year.toString().slice(0, -2);
   if (year % 100 === 0) return firstTwoDigits;
   return firstTwoDigits + 1;
 }
 // Another solution:
-const centuryRefactored = year => Math.ceil(year/100)
+const centuryRefactored = (year) => Math.ceil(year / 100);
 //------------------------------------------------------------------
 // Write a function that returns a string in which firstname is swapped with last name.
 // Example(Input --> Output)
 // "john McClane" --> "McClane john"
-const nameShuffler = str => str.split(' ').reverse().join(' ');
+const nameShuffler = (str) => str.split(" ").reverse().join(" ");
 //------------------------------------------------------------------
 // Clock shows h hours, m minutes and s seconds after midnight.
 
@@ -541,7 +565,7 @@ const nameShuffler = str => str.split(' ').reverse().join(' ');
 // 0 <= h <= 23
 // 0 <= m <= 59
 // 0 <= s <= 59
-const past = (h, m, s) => (h * 60 * 60 * 1000) + (m * 60 * 1000) + (s * 1000);
+const past = (h, m, s) => h * 60 * 60 * 1000 + m * 60 * 1000 + s * 1000;
 //------------------------------------------------------------------
 // Write a function that takes an array of numbers and returns the sum of the numbers. The numbers can be negative or non-integer. If the array does not contain any numbers then you should return 0.
 
@@ -561,16 +585,16 @@ const past = (h, m, s) => (h * 60 * 60 * 1000) + (m * 60 * 1000) + (s * 1000);
 // You can assume that you do get an array and if the array is empty, return 0.
 // What We're Testing
 // We're testing basic loops and math operations. This is for beginners who are just learning loops and math operations.
-const sum = numbers => numbers.reduce((acc, c) => acc + c, 0);
+const sum = (numbers) => numbers.reduce((acc, c) => acc + c, 0);
 //------------------------------------------------------------------
 // Now you have to write a function that takes an argument and returns the square of it.
-const square = num => Math.pow(num, 2);
+const square = (num) => Math.pow(num, 2);
 //------------------------------------------------------------------
 //This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
 function simpleMultiplication(number) {
-  if(number % 2 === 0) {
+  if (number % 2 === 0) {
     return number * 8;
-  }else{
+  } else {
     return number * 9;
   }
 }
@@ -581,27 +605,27 @@ function simpleMultiplication(number) {
 // invert([1,-2,3,-4,5]) == [-1,2,-3,4,-5]
 // invert([]) == []
 // You can assume that all values are integers. Do not mutate the input array/list.
-function invert (array) {
+function invert(array) {
   return array.map((element) => element * -1);
 }
 //------------------------------------------------------------------
 // Write a function which calculates the average of the numbers in a given list.
 // Note: Empty arrays should return 0.
 function findAverage(array) {
-  if(array != 0){
+  if (array != 0) {
     return array.reduce((acc, c) => acc + c) / array.length;
-  }else{
-    return 0
+  } else {
+    return 0;
   }
 }
 //------------------------------------------------------------------
 // A hero is on his way to the castle to complete his mission. However, he's been told that the castle is surrounded with a couple of powerful dragons! each dragon takes 2 bullets to be defeated, our hero has no idea how many bullets he should carry.. Assuming he's gonna grab a specific given number of bullets and move forward to fight another specific given number of dragons, will he survive?
 
 // Return true if yes, false otherwise :)
-function hero(bullets, dragons){
-  if(bullets / 2 >= dragons){
+function hero(bullets, dragons) {
+  if (bullets / 2 >= dragons) {
     return true;
-  }else{
+  } else {
     return false;
   }
 }
@@ -625,15 +649,15 @@ function hero(bullets, dragons){
 // 18 --> "drink beer"
 // 20 --> "drink beer"
 // 30 --> "drink whisky"
-function peopleWithAgeDrink(old){
-  if(old < 14){
-    return 'drink toddy';
-  } else if (old < 18){
-    return 'drink coke';
-  } else if (old < 21){
-    return 'drink beer';
+function peopleWithAgeDrink(old) {
+  if (old < 14) {
+    return "drink toddy";
+  } else if (old < 18) {
+    return "drink coke";
+  } else if (old < 21) {
+    return "drink beer";
   } else {
-    return 'drink whisky';
+    return "drink whisky";
   }
 }
 //------------------------------------------------------------------
@@ -649,7 +673,7 @@ function peopleWithAgeDrink(old){
 function arrayPlusArray(arr1, arr2) {
   const combined = [...arr1, ...arr2];
   return combined.reduce((total, n) => {
-    return total + n
+    return total + n;
   }, 0);
 }
 //------------------------------------------------------------------
@@ -679,18 +703,18 @@ const quarterOf = (month) => {
   if (month <= 6) return 2;
   if (month <= 9) return 3;
   return 4;
-}
+};
 //another solution
-const quartersOf = month => Math.ceil(month/3);
+const quartersOf = (month) => Math.ceil(month / 3);
 //------------------------------------------------------------------
 // Every day you rent the car costs $40. If you rent the car for 7 or more days, you get $50 off your total. Alternatively, if you rent the car for 3 or more days, you get $20 off your total.
 // Write a code that gives out the total amount for different days(d).
-function rentalCarCost (d) {
+function rentalCarCost(d) {
   let total = d * 40;
-  if(d >= 7 && d > 3){
-    return total -= 50;
-  } else if (d >= 3 && d < 7){
-    return total -= 20;
+  if (d >= 7 && d > 3) {
+    return (total -= 50);
+  } else if (d >= 3 && d < 7) {
+    return (total -= 20);
   } else {
     return total;
   }
@@ -701,10 +725,10 @@ function rentalCarCost (d) {
 // Complete the function that takes a string as an argument representing the current state of the light and returns a string representing the state the light should change to.
 
 // For example, when the input is green, output should be yellow.
-function updateLight(current){
-  if(current === 'green') return 'yellow';
-  if(current === 'yellow') return 'red';
-  if(current === 'red') return 'green';
+function updateLight(current) {
+  if (current === "green") return "yellow";
+  if (current === "yellow") return "red";
+  if (current === "red") return "green";
 }
 //------------------------------------------------------------------
 // Make multiple functions that will return the sum, difference, modulus, product, quotient, and the exponent respectively.
@@ -724,35 +748,35 @@ function updateLight(current){
 // subtraction = subt
 
 // Note: All math operations will be: a (operation) b
-const add =(a,b) => a + b;
+const add = (a, b) => a + b;
 
-const divide = (a,b) => a / b;
+const divide = (a, b) => a / b;
 
-const multiply = (a,b) => a * b;
+const multiply = (a, b) => a * b;
 
-const mod = (a,b) => a % b;
- 
-const exponent = (a,b) => a ** b;
-  
-const subt = (a,b) => a - b;
+const mod = (a, b) => a % b;
+
+const exponent = (a, b) => a ** b;
+
+const subt = (a, b) => a - b;
 //------------------------------------------------------------------
 // Write a function named setAlarm/set_alarm/set-alarm/setalarm (depending on language) which receives two parameters. The first parameter, employed, is true whenever you are employed and the second parameter, vacation is true whenever you are on vacation.
 
 // The function should return true if you are employed and not on vacation (because these are the circumstances under which you need to set an alarm). It should return false otherwise. Examples:
 
-// employed | vacation 
+// employed | vacation
 // true     | true     => false
 // true     | false    => true
 // false    | true     => false
 // false    | false    => false
-function setAlarm(employed, vacation){
-  if(employed == true && vacation == true){
+function setAlarm(employed, vacation) {
+  if (employed == true && vacation == true) {
     return false;
-  }else if(employed == false && vacation == true){
+  } else if (employed == false && vacation == true) {
     return false;
-  }else if(employed == true && vacation == false){
+  } else if (employed == true && vacation == false) {
     return true;
-  }else{
+  } else {
     return false;
   }
 }
@@ -764,7 +788,7 @@ const setAlarm = (employed, vacation) => employed && !vacation;
 // You only need to worry about english grammar rules for this kata, where anything that isn't singular (one of something), it is plural (not one of something).
 
 // All values will be positive integers or floats, or zero.
-const plural = n => n!==1;
+const plural = (n) => n !== 1;
 //------------------------------------------------------------------
 // When provided with a number between 0-9, return it in words.
 
@@ -776,37 +800,37 @@ const plural = n => n!==1;
 function switchItUp(number) {
   switch (number) {
     case 0:
-      return 'Zero';
+      return "Zero";
       break;
     case 1:
-      return 'One';
+      return "One";
       break;
     case 2:
-      return 'Two';
+      return "Two";
       break;
     case 3:
-      return 'Three';
+      return "Three";
       break;
     case 4:
-      return 'Four';
+      return "Four";
       break;
     case 5:
-      return 'Five';
+      return "Five";
       break;
     case 6:
-      return 'Six';
+      return "Six";
       break;
     case 7:
-      return 'Seven';
+      return "Seven";
       break;
     case 8:
-      return 'Eight';
+      return "Eight";
       break;
     case 9:
-      return 'Nine';
+      return "Nine";
       break;
     default:
-      return 'Enter a number 1 - 9';
+      return "Enter a number 1 - 9";
   }
 }
 //------------------------------------------------------------------
@@ -822,7 +846,7 @@ function switchItUp(number) {
 // For example:
 
 // 5, 10, 2  -->  17
-function goals (laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
+function goals(laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
   // code goes here
   return laLigaGoals + copaDelReyGoals + championsLeagueGoals;
 }
@@ -836,7 +860,7 @@ function goals (laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
 // --> [1, 2, 3, 4]
 function between(a, b) {
   const arr = [];
-  for (let i = a; i <= b; i++){
+  for (let i = a; i <= b; i++) {
     arr.push(i);
   }
   return arr;
@@ -856,10 +880,10 @@ function between(a, b) {
 // ""     =>  NULL
 // "1"    =>  NULL
 // "1,2"  =>  NULL
-function array (str) {
-  const nums = str.split(',');
-  str = nums.slice(1, nums.length -1).join(' ');
-  if(str === ''){
+function array(str) {
+  const nums = str.split(",");
+  str = nums.slice(1, nums.length - 1).join(" ");
+  if (str === "") {
     return null;
   } else {
     return str;
@@ -871,14 +895,14 @@ function array (str) {
 // Return the average of the given array rounded down to its nearest integer.
 
 // The array will never be empty.
-function getAverage(marks){
+function getAverage(marks) {
   //TODO : calculate the downward rounded average of the marks array
   let total = 0;
-  
-  for (let i = 0; i < marks.length; i++){
+
+  for (let i = 0; i < marks.length; i++) {
     total += marks[i];
   }
-  
+
   let average = Math.floor(total / marks.length);
   return average;
 }
@@ -897,7 +921,7 @@ function getAverage(marks){
 // For example 2 is not a factor of 7 because: 7 % 2 = 1
 
 // Note: base is a non-negative number, factor is a positive number.
-function checkForFactor (base, factor) {
+function checkForFactor(base, factor) {
   return base % factor == 0;
 }
 //-------------------------------------------------------------------
@@ -908,14 +932,13 @@ function checkForFactor (base, factor) {
 // 2) n =  12, x = 2, y = 6 =>  true because  12 is divisible by 2 and 6
 // 3) n = 100, x = 5, y = 3 => false because 100 is not divisible by 3
 // 4) n =  12, x = 7, y = 5 => false because  12 is neither divisible by 7 nor 5
-const isDivisible = (n, x, y) => n % x == 0 && n % y == 0 ? true : false;
+const isDivisible = (n, x, y) => (n % x == 0 && n % y == 0 ? true : false);
 //-------------------------------------------------------------------
 // Jenny has written a function that returns a greeting for a user. However, she's in love with Johnny, and would like to greet him slightly different. She added a special case to her function, but she made a mistake.
 
 // Can you help her?
-function greet(name){
-  if(name === "Johnny")
-    return "Hello, my love!";
+function greet(name) {
+  if (name === "Johnny") return "Hello, my love!";
   else return "Hello, " + name + "!";
 }
 //-------------------------------------------------------------------
@@ -949,7 +972,11 @@ function greet(name){
 
 // Note
 // All inputs are valid. Array contains at least 1 digit. Each digit appears at most once.
-isValid = formula => !(formula.includes(1) && formula.includes(2)) && !(formula.includes(3) && formula.includes(4)) && (formula.includes(5) == formula.includes(6)) && (formula.includes(7) || formula.includes(8)) 
+isValid = (formula) =>
+  !(formula.includes(1) && formula.includes(2)) &&
+  !(formula.includes(3) && formula.includes(4)) &&
+  formula.includes(5) == formula.includes(6) &&
+  (formula.includes(7) || formula.includes(8));
 //-------------------------------------------------------------------
 // The cockroach is one of the fastest insects. Write a function which takes its speed in km per hour and returns it in cm per second, rounded down to the integer (= floored).
 
@@ -958,7 +985,7 @@ isValid = formula => !(formula.includes(1) && formula.includes(2)) && !(formula.
 // 1.08 --> 30
 // Note! The input is a Real number (actual type is language dependent) and is >= 0. The result should be an Integer.
 function cockroachSpeed(s) {
-  return Math.floor(s * 1000*100 / (60*60));
+  return Math.floor((s * 1000 * 100) / (60 * 60));
 }
 //-------------------------------------------------------------------
 // The function is not returning the correct values. Can you figure out why?
@@ -967,35 +994,35 @@ function cockroachSpeed(s) {
 
 // 3 --> "Earth"
 // Notes: Originally, there weren't any break statements and it lacked a default statement.
-function getPlanetName(id){
+function getPlanetName(id) {
   var name;
-  switch(id){
+  switch (id) {
     case 1:
-      name = 'Mercury'
+      name = "Mercury";
       break;
     case 2:
-      name = 'Venus'
+      name = "Venus";
       break;
     case 3:
-      name = 'Earth'
+      name = "Earth";
       break;
     case 4:
-      name = 'Mars'
+      name = "Mars";
       break;
     case 5:
-      name = 'Jupiter'
+      name = "Jupiter";
       break;
     case 6:
-      name = 'Saturn'
+      name = "Saturn";
       break;
     case 7:
-      name = 'Uranus'
+      name = "Uranus";
       break;
     case 8:
-      name = 'Neptune'
+      name = "Neptune";
       break;
     default:
-      name = 'Input a number 1 - 8';
+      name = "Input a number 1 - 8";
   }
   return name;
 }
@@ -1013,10 +1040,10 @@ function getPlanetName(id){
 // cap = 100, on = 60, wait = 50 --> 10 # He can't fit 10 of the 50 waiting
 function enough(cap, on, wait) {
   if (cap - (on + wait) >= 0) return 0;
-  return (on + wait) - cap;
+  return on + wait - cap;
 }
 // another way
-function enough (cap, on, wait) {
+function enough(cap, on, wait) {
   return Math.max(wait + on - cap, 0);
 }
 //-------------------------------------------------------------------
@@ -1026,7 +1053,7 @@ function enough (cap, on, wait) {
 
 // Example:
 // move(3, 6) should equal 15
-function move (position, roll) {
+function move(position, roll) {
   return position + roll * 2;
 }
 //-------------------------------------------------------------------
@@ -1041,7 +1068,7 @@ function move (position, roll) {
 // The array will always have at least 2 elements1 and all elements will be numbers. The numbers will also all be unique and in ascending order. The numbers could be positive or negative and the first non-consecutive could be either too!
 function firstNonConsecutive(arr) {
   for (let i = 1; i < arr.length; i++) {
-    if (arr[i] - arr[i-1] != 1) return arr[i]; 
+    if (arr[i] - arr[i - 1] != 1) return arr[i];
   }
   return null; // got an undefined error, so had to use this statement
 }
@@ -1064,7 +1091,7 @@ function sayHello(name) {
 // Numbers may be positive or negative, integers or floats.
 
 // Floats with decimal part non equal to zero are considered UNeven for this kata.
-function testEven (n) {
+function testEven(n) {
   return n % 2 == 0;
 }
 //-------------------------------------------------------------------
@@ -1087,15 +1114,11 @@ function testEven (n) {
 // +9 dog years for second year
 // +5 dog years for each year after that
 
-var humanYearsCatYearsDogYears = function(humanYears) {
-  if (humanYears == 1) return [1, 15, 15]
-  if (humanYears == 2) return [2, 24, 24]
-  return [
-    humanYears,
-    24 + (humanYears - 2) * 4,
-    24 + (humanYears - 2) * 5
-  ];
-}
+var humanYearsCatYearsDogYears = function (humanYears) {
+  if (humanYears == 1) return [1, 15, 15];
+  if (humanYears == 2) return [2, 24, 24];
+  return [humanYears, 24 + (humanYears - 2) * 4, 24 + (humanYears - 2) * 5];
+};
 //-------------------------------------------------------------------
 // Create a function that always returns True/true for every item in a given list.
 // However, if an element is the word 'flick', switch to always returning the opposite boolean value.
@@ -1112,9 +1135,9 @@ var humanYearsCatYearsDogYears = function(humanYears) {
 // Switch the boolean value on the same element as the flick itself.
 function flickSwitch(arr) {
   let returning = true;
-  return arr.map( (v) => {
-    return (v === "flick") ? returning = !returning : returning;
-  })
+  return arr.map((v) => {
+    return v === "flick" ? (returning = !returning) : returning;
+  });
 }
 //-------------------------------------------------------------------
 // Write a function that takes a list of strings as an argument and returns a filtered list containing the same elements but with the 'geese' removed.
@@ -1129,9 +1152,9 @@ function flickSwitch(arr) {
 
 // ["Mallard", "Hook Bill", "Crested", "Blue Swedish"]
 // The elements in the returned array should be in the same order as in the initial array passed to your function, albeit with the 'geese' removed. Note that all of the strings will be in the same case as those provided, and some elements may be repeated.
-function gooseFilter (birds) {
-  var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"]
-  return birds.filter(bird => !geese.includes(bird));
+function gooseFilter(birds) {
+  var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+  return birds.filter((bird) => !geese.includes(bird));
 }
 //-------------------------------------------------------------------
 // Is it a palindrome?
@@ -1139,7 +1162,7 @@ function gooseFilter (birds) {
 
 // A palindrome is a word, number, phrase, or other sequence of symbols that reads the same backwards as forwards, such as madam or racecar.
 function isPalindrome(x) {
-  return (x.split('').reverse().join('').toLowerCase() == x.toLowerCase());
+  return x.split("").reverse().join("").toLowerCase() == x.toLowerCase();
 }
 //-------------------------------------------------------------------
 // Create a function finalGrade, which calculates the final grade of a student depending on two parameters: a grade for the exam and a number of completed projects.
@@ -1165,11 +1188,14 @@ function isPalindrome(x) {
 // 55, 0 --> 0
 // 20, 2 --> 0
 // *Use Comparison and Logical Operators.
-function finalGrade (exam, projects) {
-  return exam > 90 || projects > 10 ? 100
-  : exam > 75 && projects > 4 ? 90
-  : exam > 50 && projects > 1 ? 75
-  : 0
+function finalGrade(exam, projects) {
+  return exam > 90 || projects > 10
+    ? 100
+    : exam > 75 && projects > 4
+    ? 90
+    : exam > 50 && projects > 1
+    ? 75
+    : 0;
 }
 //-------------------------------------------------------------------
 // Complete the function that takes a non-negative integer n as input, and returns a list of all the powers of 2 with the exponent ranging from 0 to n ( inclusive ).
@@ -1178,9 +1204,9 @@ function finalGrade (exam, projects) {
 // n = 0  ==> [1]        # [2^0]
 // n = 1  ==> [1, 2]     # [2^0, 2^1]
 // n = 2  ==> [1, 2, 4]  # [2^0, 2^1, 2^2]
-function powersOfTwo(n){
+function powersOfTwo(n) {
   const arr = [];
-  for (let i = 0; i <= n; i++){
+  for (let i = 0; i <= n; i++) {
     arr.push(Math.pow(2, i));
   }
   return arr;
@@ -1195,7 +1221,7 @@ function powersOfTwo(n){
 
 // If you can, try writing it in one line of code.
 function findDifference(a, b) {
-  return Math.abs((a[0] * a[1] * a[2]) - (b[0] * b[1] * b[2]));
+  return Math.abs(a[0] * a[1] * a[2] - b[0] * b[1] * b[2]);
 }
 //-------------------------------------------------------------------
 function getRealFloor(n) {
@@ -1217,9 +1243,9 @@ function getRealFloor(n) {
 // If either input is an empty string, consider it as zero.
 
 // Inputs and the expected output will never exceed the signed 32-bit integer limit (2^31 - 1)
-function sumStr(a,b) {
-  if (a === '') a = '0';
-  if (b === '') b = '0';
+function sumStr(a, b) {
+  if (a === "") a = "0";
+  if (b === "") b = "0";
   return `${parseInt(a) + parseInt(b)}`;
 }
 // Title: Find numbers which are divisible by given number
@@ -1227,8 +1253,8 @@ function sumStr(a,b) {
 // Example(Input1, Input2 --> Output)
 
 // [1, 2, 3, 4, 5, 6], 2 --> [2, 4, 6]
-function divisibleBy(numbers, divisor){
-  return numbers.filter(x => x % divisor == 0);
+function divisibleBy(numbers, divisor) {
+  return numbers.filter((x) => x % divisor == 0);
 }
 //-------------------------------------------------------------------
 // Title: Training JS #1: create your first JS function and print "Hello World!"
@@ -1250,8 +1276,8 @@ function divisibleBy(numbers, divisor){
 // When you have finished the work, click "Run Tests" to see if your code is working properly.
 
 // In the end, click "Submit" to submit your code pass this kata.
-function helloWorld(){
-  let str = 'Hello World!';
+function helloWorld() {
+  let str = "Hello World!";
   console.log(str);
 }
 //-------------------------------------------------------------------
@@ -1264,7 +1290,7 @@ function helloWorld(){
 // 97 --> 'a'
 // 48 --> '0
 // For ASCII table, you can refer to http://www.asciitable.com/
-function getChar(c){
+function getChar(c) {
   return String.fromCharCode(c);
 }
 //-------------------------------------------------------------------
@@ -1281,10 +1307,10 @@ function getChar(c){
 // "anyone else" --> 0
 // "Zach" --> 18
 function howManyLightsabersDoYouOwn(name) {
-  if(name == 'Zach'){
-    return 18
-  }else{
-    return 0
+  if (name == "Zach") {
+    return 18;
+  } else {
+    return 0;
   }
 }
 //-------------------------------------------------------------------
@@ -1299,15 +1325,13 @@ function howManyLightsabersDoYouOwn(name) {
 // Notes
 // You may consider that there will not be any empty arrays/vectors.
 
-const min = list => {
-    
+const min = (list) => {
   return Math.min(...list);
-}
+};
 
-const max = list => {
-  
+const max = (list) => {
   return Math.max(...list);
-}
+};
 //-------------------------------------------------------------------
 // Title: Expressions Matter
 // Given three integers a ,b ,c, return the largest number obtained after inserting the following operators and brackets: +, *, ()
@@ -1328,8 +1352,8 @@ const max = list => {
 // It's not necessary to place all the signs and brackets.
 // Repetition in numbers may occur .
 // You cannot swap the operands. For instance, in the given example you cannot get expression (1 + 3) * 2 = 8.
-const expressionMatter = (a, b, c) => 
-  Math.max(a + b + c, a * b * c, (a + b) * c, a * (b + c))
+const expressionMatter = (a, b, c) =>
+  Math.max(a + b + c, a * b * c, (a + b) * c, a * (b + c));
 //-------------------------------------------------------------------
 // Title: Training JS #7: if...else and ternary operator
 // Task:
@@ -1340,8 +1364,7 @@ const expressionMatter = (a, b, c) =>
 // n >= 5 and n < 10	95
 // n >= 10	90
 // You can use if..else or ternary operator to complete it.
-const saleHotdogs = n => 
-  n * (n < 5 ? 100 : n < 10 ? 95 : 90)
+const saleHotdogs = (n) => n * (n < 5 ? 100 : n < 10 ? 95 : 90);
 //-------------------------------------------------------------------
 // Title: Lario and Muigi Pipe Problem
 // Issue
@@ -1356,9 +1379,9 @@ const saleHotdogs = n =>
 
 // Example
 // Input:  1,3,5,6,7,8 Output: 1,2,3,4,5,6,7,8
-function pipeFix(numbers){
+function pipeFix(numbers) {
   const newNumbers = [];
-  for (let i = numbers[0]; i <= numbers[numbers.length - 1]; i++){
+  for (let i = numbers[0]; i <= numbers[numbers.length - 1]; i++) {
     newNumbers.push(i);
   }
   return newNumbers;
@@ -1385,15 +1408,19 @@ function pipeFix(numbers){
 //      I
 //       I
 function drawStairs(n) {
-  return [...Array(n)].map((_, index) => ' '.repeat(index) + 'I').join('\n')
+  return [...Array(n)].map((_, index) => " ".repeat(index) + "I").join("\n");
 }
 //-------------------------------------------------------------------
 // Title: Find the Difference in Age between Oldest and Youngest Family Members
 // At the annual family gathering, the family likes to find the oldest living family member’s age and the youngest family member’s age and calculate the difference between them.
 
 // You will be given an array of all the family members' ages, in any order. The ages will be given in whole numbers, so a baby of 5 months, will have an ascribed ‘age’ of 0. Return a new array (a tuple in Python) with [youngest age, oldest age, difference between the youngest and oldest age].
-function differenceInAges(ages){
-  return [Math.min(...ages), Math.max(...ages), Math.max(...ages) - Math.min(...ages)];
+function differenceInAges(ages) {
+  return [
+    Math.min(...ages),
+    Math.max(...ages),
+    Math.max(...ages) - Math.min(...ages),
+  ];
 }
 //-------------------------------------------------------------------
 // Title: Points of Reflection
@@ -1415,8 +1442,8 @@ function symmetricPoint(p, q) {
 // replace("!Hi! Hi!") === "!H!! H!!"
 // replace("aeiou") === "!!!!!"
 // replace("ABCDE") === "!BCD!"
-function replace(s){
-  return s.replace(/[aeiou]/gi, '!')
+function replace(s) {
+  return s.replace(/[aeiou]/gi, "!");
 }
 //-------------------------------------------------------------------
 // Title: CSV representation of array
@@ -1428,8 +1455,8 @@ function replace(s){
 //    [[ 0, 1, 2, 3, 4 ],
 //     [ 10,11,12,13,14 ],
 //     [ 20,21,22,23,24 ],
-//     [ 30,31,32,33,34 ]] 
-    
+//     [ 30,31,32,33,34 ]]
+
 // output:
 //      '0,1,2,3,4\n'
 //     +'10,11,12,13,14\n'
@@ -1441,14 +1468,39 @@ function replace(s){
 
 // Note: you shouldn't escape the \n, it should work as a new line.
 function toCsvText(array) {
-  let result = '';
+  let result = "";
   for (let i = 0; i < array.length; i++) {
     result += array[i];
-    if ( i != array.length - 1) {
-      result += '\n';
-    };
+    if (i != array.length - 1) {
+      result += "\n";
+    }
   }
   return result;
 }
 // alternate one-line way:
-const toCsvText = array => array.join('\n');
+const toCsvText = (array) => array.join("\n");
+//-------------------------------------------------------------------
+// Title: Simple Change Machine
+// Your task is to create a change machine.
+
+// The machine accepts a single coins or notes, and returns change in 20p and 10p coins. The machine will try to avoid returning its exact input, but will otherwise return as few coins as possible. For example, a 50p piece should become two 20p pieces and one 10p piece, but a 20p piece should become two 10p pieces.
+
+// The machine can exclusively process these coins and notes: £5, £2, £1, 50p, 20p. Any coins and notes which are not accepted by the machine will be returned unprocessed. For example, if you were to put a £20 note into the machine, it would be returned to you and not broken into change. (Note that £1 is worth 100p.)
+
+// This change machine is programmed to accept and distribute strings rather than numbers. The input will be a string containing the coin or note to be processed, and the change should be returned as one string with the coin names separated by single spaces with no commas. The values of the string should be in descending order. For example, an input of "50p" should yield the exact string "20p 20p 10p".
+function changeMe(moneyIn) {
+  switch (moneyIn) {
+    case "£5":
+      return "20p ".repeat(25).trim();
+    case "£2":
+      return "20p ".repeat(10).trim();
+    case "£1":
+      return "20p ".repeat(5).trim();
+    case "50p":
+      return "20p 20p 10p";
+    case "20p":
+      return "10p 10p";
+    default:
+      return moneyIn;
+  }
+}
