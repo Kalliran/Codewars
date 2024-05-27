@@ -44,3 +44,8 @@ More details here: https://en.wikipedia.org/wiki/Comma-separated_values
 Note: you shouldn't escape the \n, it should work as a new line.'''
 def to_csv_text(array):
   return "\n".join([",".join(map(str, i)) for i in array])
+#-----------------------------------------------------------------------------------------
+# Title: Multiply
+'''The code does not execute properly. Try to figure out why.'''
+def multiply(a, b):
+  return a * b
