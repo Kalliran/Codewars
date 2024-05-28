@@ -49,3 +49,10 @@ def to_csv_text(array):
 '''The code does not execute properly. Try to figure out why.'''
 def multiply(a, b):
   return a * b
+#-----------------------------------------------------------------------------------------
+# Title: Calculate Average
+'''Write a function which calculates the average of the numbers in a given list.
+
+Note: Empty arrays should return 0.'''
+def find_average(numbers):
+  return sum(numbers) / len(numbers) if numbers else 0
