@@ -1522,3 +1522,13 @@ function changeMe(moneyIn) {
 function mergeArrays(arr1, arr2) {
   return Array.from(new Set(arr1.concat(arr2)) || []).sort((a, b) => a - b); // merge the arrays and remove duplicates;
 }
+//-------------------------------------------------------------------
+// Title: Super Duper Easy
+// Make a function that returns the value multiplied by 50 and increased by 6. If the value entered is a string it should return "Error".
+function problem(x) {
+  return Number.isInteger(x) ? x * 50 + 6 : "Error";
+}
+// alternate way:
+function problem(x) {
+  return typeof x === "number" ? x * 50 + 6 : "Error";
+}
