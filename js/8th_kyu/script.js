@@ -1533,7 +1533,7 @@ function problem(x) {
   return typeof x === "number" ? x * 50 + 6 : "Error";
 }
 //-------------------------------------------------------------------
-// Title: The Wide-Mouthed frog! 
+// Title: The Wide-Mouthed frog!
 // The wide-mouth frog is particularly interested in the eating habits of other creatures.
 
 // He just can't stop asking the creatures he encounters what they like to eat. But, then he meets the alligator who just LOVES to eat wide-mouthed frogs!
@@ -1541,15 +1541,42 @@ function problem(x) {
 // When he meets the alligator, it then makes a tiny mouth.
 
 // Your goal in this kata is to create complete the mouth_size method this method takes one argument animal which corresponds to the animal encountered by the frog. If this one is an alligator (case-insensitive) return small otherwise return wide.
-function mouthSize (animal) {
-  return animal.toLowerCase() === 'alligator' ? 'small' : 'wide';
+function mouthSize(animal) {
+  return animal.toLowerCase() === "alligator" ? "small" : "wide";
 }
 //-------------------------------------------------------------------
 // Title: Sort My Textbooks
 // HELP! Jason can't find his textbook! It is two days before the test date, and Jason's textbooks are all out of order! Help him sort a list (ArrayList in java) full of textbooks by subject, so he can study before the test.
 
 // The sorting should NOT be case sensitive
-function sorter (textbooks) {
-  return textbooks.sort((a, b) => a.toLowerCase() > b.toLowerCase() ? 1 : 
-                                  a.toLowerCase() < b.toLowerCase() ? -1  : 0)
+function sorter(textbooks) {
+  return textbooks.sort((a, b) =>
+    a.toLowerCase() > b.toLowerCase()
+      ? 1
+      : a.toLowerCase() < b.toLowerCase()
+      ? -1
+      : 0
+  );
+}
+//-------------------------------------------------------------------
+// Title: Find Nearest square number
+// Your task is to find the nearest square number, nearest_sq(n) or nearestSq(n), of a positive integer n.
+
+// For example, if n = 111, then nearest\_sq(n) (nearestSq(n)) equals 121, since 111 is closer to 121, the square of 11, than 100, the square of 10.
+
+// If the n is already the perfect square (e.g. n = 144, n = 81, etc.), you need to just return n.
+
+// Good luck :)
+
+// Check my other katas:
+
+// Alphabetically ordered
+
+// Case-sensitive!
+
+// Not prime numbers
+
+// Find your caterer
+function nearestSq(n) {
+  return Math.round(Math.sqrt(n)) ** 2;
 }
